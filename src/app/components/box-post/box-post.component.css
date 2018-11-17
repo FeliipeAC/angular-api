@@ -1,0 +1,11 @@
+.box-post {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-title h2{
+    font-family: 'Ranga', cursive;
+    font-size: 2.5rem;
+}
+app-placeholder-post {
+    width: 100%;
+}

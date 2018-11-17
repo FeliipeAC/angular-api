@@ -1,0 +1,19 @@
+
+.box-comment {
+    margin: 0 0 20px 15px;
+    box-shadow: 2px 2px 4px #ddd;
+}
+.box-comment .user h3 {
+    font-size: 1.09rem;
+    margin: 10px 0 0;
+    font-weight: 600;
+}
+.box-comment .user p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+.box-comment > p {
+    padding: 10px;
+    border-left: 1px solid #ddd;
+    margin: 5px 0;
+}

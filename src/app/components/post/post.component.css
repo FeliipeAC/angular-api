@@ -1,0 +1,10 @@
+.post-body img {
+    width: 100%
+}
+.post-body h2 {
+    font-size: 1.39rem;
+}
+.post-user {
+    position: sticky;
+    top: 20px;
+}

@@ -1,0 +1,12 @@
+
+<div [@fadeInOut]>
+  <div class="header-title">
+    <h2>Últimos posts</h2>
+  </div>
+  <div class="box-post" *ngIf="placeHolder" [@fadeInOut]>
+    <app-placeholder-post *ngFor="let item of [1,2,3]" ></app-placeholder-post>
+  </div>
+  <div class="box-post" *ngIf="!placeHolder" [@fadeInOut]>
+    <app-card-post *ngFor="let post of listaPosts" [post]="post"></app-card-post>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.box-user {
+    position: sticky;
+    top: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+    0 3px 1px -2px rgba(0,0,0,0.12), 
+    0 1px 5px 0 rgba(0,0,0,0.2);
+}
+figure {
+    width: 100%;
+    margin: 0;
+}
+figure img {
+    display: block;
+    margin: auto;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    object-position: center;
+}
+.box-user h2 {
+    font-size: 1.39rem;
+    text-align: center;
+    margin: 15px 0;
+}
+.box-user p {
+    font-size: 0.9rem;
+}
