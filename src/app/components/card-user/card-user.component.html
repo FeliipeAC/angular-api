@@ -1,14 +1,21 @@
 <div>
   <div class="box-user" [@fadeInOut]>
-    <figure>
-      <img class="circle responsive-img" [src]="user.foto" alt="">
-    </figure>
-    <h2>{{ user.name }}</h2>
-    <p><i class="material-icons left">account_circle</i>{{ user.username }}</p>
-    <p><i class="material-icons left">email</i>{{ user.email }}</p>
-    <p><i class="material-icons left">phone</i>{{ user.phone }}</p>
-    <p><i class="material-icons left">location_city</i>{{ user.city }}</p>
-    <p><i class="material-icons left">business_center</i>{{ user.company }}</p>
-    <p><i class="material-icons left">public</i>{{ user.website }}</p>
+    <div class="box-user-header">
+      <figure>
+        <img class="circle responsive-img" [src]="user.foto" alt="">
+      </figure>
+    </div>
+    <div class="box-user-body">
+      <h2>{{ user.name }}</h2>
+      <p><i class="material-icons left">account_circle</i>{{ user.username }}</p>
+      <p><i class="material-icons left">email</i>{{ user.email }}</p>
+      <p><i class="material-icons left">phone</i>{{ user.phone }}</p>
+      <p><i class="material-icons left">location_city</i>{{ user.city }}</p>
+      <p><i class="material-icons left">business_center</i>{{ user.company }}</p>
+      <p><i class="material-icons left">public</i>{{ user.website }}</p>
+    </div>
+    <div class="box-user-footer center-align" *ngIf="footerState" >
+      <a href="user/{{user.id}}">Ver mais posts</a>
+    </div>
   </div>
 </div>

@@ -9,3 +9,15 @@
 app-placeholder-post {
     width: 100%;
 }
+.showmore-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.fixed-action-btn {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: black !important;
+    font-size: 0.8rem;
+}

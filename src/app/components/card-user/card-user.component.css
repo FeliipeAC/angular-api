@@ -26,3 +26,9 @@ figure img {
 .box-user p {
     font-size: 0.9rem;
 }
+
+.box-user-footer {
+    border-top: 1px solid #ddd;
+    margin-top: 5px;
+    padding-top: 8px;
+}

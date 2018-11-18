@@ -13,8 +13,8 @@ export class PostsService {
   /**
   * Retorna um JSON com os posts (limitada em 20)
   */
-  getPosts() {
-    return this.http.get(this.url + '?_limit=10');
+  getPosts(start, end) {
+    return this.http.get(this.url + '?_start=' + start + '&_end=' + end);
   }
   
   /**
@@ -23,7 +23,9 @@ export class PostsService {
   * @return Post - retorna um objeto
   */
   getPost(id: string) {
-    return this.http.get(this.url + '/' + id);
+    return  this.http.get(this.url + '/' + id);
+    // const post = new Post(obj);
+    // return post;
   }
 
   /**

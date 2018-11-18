@@ -13,39 +13,42 @@ import { PostsService } from '../../core/posts.service';
 export class UserComponent implements OnInit {
   
   user: User;
-  posts: Post[] = [];
+  listaPosts: Post[] = [];
+  userId: string;
   
   constructor(private route: ActivatedRoute,
     private usersService: UsersService,
-    private postsService: PostsService) { }
-  
-  ngOnInit() {
-    /**
-    * Pega o ID do post pela rota atual
-    */
-    this.route.params.subscribe((params: any) => {
-      this.getUser(params.id);
-      this.getPosts(params.id);
-      console.log('Lista: ', this.posts);
-    });
+    private postsService: PostsService) {
+      /**
+      * Pega o ID do post pela rota atual
+      */
+      this.userId = this.route.snapshot.params['id'];
+      console.log('Id:', this.userId);
+    }
+    
+    ngOnInit() {
+      
+      this.getUser(this.userId);
+      console.log('Lista: ', this.listaPosts); 
+    }
+    
+    getUser(id: string) {
+      this.usersService.getUserById(id).subscribe(obj => {
+        this.user = new User(obj);
+        this.getPosts(this.user.id);
+        console.log('User: ', this.user);
+        console.log('Lista2: ', this.listaPosts); 
+      });
+    }
+    
+    getPosts(id: string) {
+      this.postsService.getPostsUser(id).subscribe(postsUser => {
+        const lista: any = postsUser;
+        for(let post of lista) {
+          this.listaPosts.push(new Post(post));
+        }
+      });
+    }
     
   }
-
-  getUser(id: string) {
-    this.usersService.getUserById(id).subscribe(obj => {
-      this.user = new User(obj);
-      console.log('User: ', this.user);
-      
-    });
-  }
-
-  getPosts(id: string) {
-    this.postsService.getPostsUser(id).subscribe(postsUser => {
-      const lista: any = postsUser;
-      for(let post of lista) {
-        this.posts.push(new Post(post));
-      }
-    });
-  }
   
-}

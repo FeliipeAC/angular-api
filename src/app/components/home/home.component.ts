@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  qtdItens: string;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  showMore(qtd) {
+    this.qtdItens = qtd;
+    console.log('Qtd: ', this.qtdItens);
+  }
 }

@@ -1,12 +1,19 @@
 
 <div [@fadeInOut]>
-  <div class="header-title">
-    <h2>Últimos posts</h2>
-  </div>
-  <div class="box-post" *ngIf="placeHolder" [@fadeInOut]>
+  <div id="boxPost" class="box-post" *ngIf="placeHolder" [@fadeInOut]>
     <app-placeholder-post *ngFor="let item of [1,2,3]" ></app-placeholder-post>
   </div>
   <div class="box-post" *ngIf="!placeHolder" [@fadeInOut]>
     <app-card-post *ngFor="let post of listaPosts" [post]="post"></app-card-post>
   </div>
-</div>
+  <div class="showmore-area">
+    <a class="waves-effect waves-light btn-large showmore blue darken-2" (click)="showMore()" >
+      <i class="large material-icons left">add_circle</i>Mostrar mais</a>
+    <div id="backTop" class="fixed-action-btn" *ngIf="state" [@fadeInOut]>
+      <a class="btn-floating btn-large blue darken-2" (click)="backTop()">
+        <i class="large material-icons">arrow_upward</i>
+      </a>
+      Voltar ao topo
+    </div>
+  </div>
+  

@@ -2,9 +2,6 @@
 nav {
     background-color: #1585de;
     margin-bottom: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
 }
 .nav-wrapper a {
     font-family: 'Monoton', cursive;

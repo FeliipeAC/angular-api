@@ -21,9 +21,10 @@ import {animate, style, transition, trigger} from '@angular/animations';
 export class CardUserComponent implements OnInit {
 
   @Input() user: User;
+  @Input() footerState: boolean;
 
   constructor() { }
-
+    
   ngOnInit() {
   }
 
