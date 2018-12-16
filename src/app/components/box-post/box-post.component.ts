@@ -24,29 +24,29 @@ import { ElementDef } from '@angular/core/src/view';
 
 })
 export class BoxPostComponent implements OnInit {
-  
+
   listaPosts: Post[] = [];
   placeHolder = true;
-  
+
   // Posição inicial para pegar os posta
-  startItens: number = 0;
+  startItens = 0;
   // Posição final
-  endItens: number = 5;
+  endItens = 5;
 
   state = false;
-  
+  isBottom = false;
+
   constructor(private postsService: PostsService,
     private usersService: UsersService,
     public el: ElementRef) {
-      
-      
+
     }
-    
+
     ngOnInit() {
       console.log('Qtd: ', this.startItens, this.endItens);
       this.carregaPosts(this.startItens, this.endItens);
     }
-    
+
     /**
     * Carrega a lista com os posts
     */
@@ -56,10 +56,10 @@ export class BoxPostComponent implements OnInit {
       */
       this.postsService.getPosts(start, end).subscribe(lista => {
         const listaAux: any = lista;
-        for (let post of listaAux) {
+        for (const post of listaAux) {
           // console.log('Post: ', post);
           const objPost = new Post(post);
-          
+
           /**
           * Pega o usário que criou o post
           */
@@ -68,13 +68,13 @@ export class BoxPostComponent implements OnInit {
             objPost.setUser(objUser);
             this.listaPosts.push(objPost);
           });
-          
+
         }
         console.log('Posts: ', this.listaPosts);
         this.placeHolder = false;
-      }); 
+      });
     }
-    
+
     /**
      * Carrega mais posts (5 por vez)
      */
@@ -86,30 +86,41 @@ export class BoxPostComponent implements OnInit {
       // Adiciona os novos 5 posts a lista
       this.carregaPosts(this.startItens, this.endItens);
     }
-    
+
     /**
     * Escuta o evento de scroll da página
     */
-    @HostListener("window:scroll", [])
+    @HostListener('window:scroll', [])
     onWindowScroll() {
-      
+
+      // Scroll máximo da página
+      const scrollMax = document.body.offsetHeight - window.innerHeight;
+
       // Mostra o botão de voltar ao topo se o scroll for maior que 120px
       if (window.scrollY > 120) {
         this.state = true;
       } else {
         this.state = false;
       }
-      
+
+      // Altera as cores do botão se estiver na região do footer
+      if (window.scrollY > scrollMax - 150) {
+        this.isBottom = true;
+      } else {
+        this.isBottom = false;
+      }
+
     }
-    
+
     /**
     * Volta para o topo da página
     */
     backTop() {
-      // window.setTimeout(null, 4000);
-      window.scroll(0,0);      
-      // window.requestAnimationFrame(FrameRequestCallback, 3000);     
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
     }
-    
+
   }
-  

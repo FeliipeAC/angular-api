@@ -1,9 +1,9 @@
-<app-header></app-header>
-<div id="mainContainer" class="main-container row">
+<app-header *ngIf="exibirHeaderFooter" ></app-header>
+<!-- <div id="mainContainer" class="main-container row"> -->
   
-  <div class="containter main-content">
+  <!-- <div class="containter main-content"> -->
     <router-outlet></router-outlet>
-  </div>
-</div>
-<app-footer></app-footer>
+  <!-- </div> -->
+<!-- </div> -->
+<app-footer *ngIf="exibirHeaderFooter" ></app-footer>
 

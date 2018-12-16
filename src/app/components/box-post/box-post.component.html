@@ -10,8 +10,8 @@
     <a class="waves-effect waves-light btn-large showmore blue darken-2" (click)="showMore()" >
       <i class="large material-icons left">add_circle</i>Mostrar mais</a>
     <div id="backTop" class="fixed-action-btn" *ngIf="state" [@fadeInOut]>
-      <a class="btn-floating btn-large blue darken-2" (click)="backTop()">
-        <i class="large material-icons">arrow_upward</i>
+      <a [ngClass]="{'white': isBottom, 'blue': !isBottom}"  class="btn-floating btn-large darken-2" (click)="backTop()">
+        <i  [ngClass]="{'white': isBottom, 'blue': !isBottom}" class="large material-icons">arrow_upward</i>
       </a>
       Voltar ao topo
     </div>

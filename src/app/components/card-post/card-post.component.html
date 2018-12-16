@@ -10,7 +10,9 @@
       </div>
       <div class="card-action">
         <p> Posted by {{ post.user.name }}</p> 
-          <a href="post/{{post.id}}" class="btn btn-small"><i class="material-icons right">navigate_next</i>Ver mais</a>
+        <a routerLink="post/{{post.id}}" class="btn btn-small">
+          <i class="material-icons right">navigate_next</i>Ver mais
+        </a>
       </div>
     </div>
   </div>

@@ -10,18 +10,18 @@ export class User {
     city: string;
     company: string;
 
-
+    // Url da foto
     foto: string;
 
     constructor(user) {
         this.id = user.id;
         this.name = user.name;
         this.username = user.username;
-        this.email= user.email;
+        this.email = user.email;
         this.phone = user.phone;
         this.website = user.website;
         this.city = user.address.city;
         this.company = user.company.name;
-        this.foto = "https://picsum.photos/1110/492/?image=5" + user.id;
+        this.foto = 'https://picsum.photos/1110/492/?image=5' + user.id;
     }
 }

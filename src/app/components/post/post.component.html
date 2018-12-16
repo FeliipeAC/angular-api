@@ -1,30 +1,32 @@
-<div class="row" [@fadeInOut]>
-  <div class="center-align" *ngIf="stateSpinner">
-    <div class="preloader-wrapper big active">
-      <div class="spinner-layer spinner-blue-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+<div id="mainContainer" class="main-container row">
+  <div class="row" [@fadeInOut]>
+    <div class="center-align" *ngIf="stateSpinner">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div *ngIf="!stateSpinner">
-    <div class="col s8 post-body" [@fadeInOut]>
-      <img [src]="post.capa" class="responsive-img">
-      <h2>{{ post.title }}</h2>
-      <p>quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae 
-        ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto</p>
-        <div class="post-comments">
-          <p>{{ comments.length}} {{ comments.length === 1 ? 'comentário' : 'comentários'}}</p>
-          <app-comments *ngFor="let item of comments" [comment]="item" ></app-comments>
+    <div *ngIf="!stateSpinner">
+      <div class="col s8 post-body" [@fadeInOut]>
+        <img [src]="post.capa" class="responsive-img">
+        <h2>{{ post.title }}</h2>
+        <p>quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae 
+          ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto</p>
+          <div class="post-comments">
+            <p>{{ comments.length}} {{ comments.length === 1 ? 'comentário' : 'comentários'}}</p>
+            <app-comments *ngFor="let item of comments" [comment]="item" ></app-comments>
+          </div>
         </div>
-      </div>
-      <div class="col s4 post-user" [@fadeInOut]>
-        <app-card-user [user]="post.user" [footerState]="true" ></app-card-user>
+        <div class="col s4 post-user" [@fadeInOut]>
+          <app-card-user [user]="post.user" [footerState]="true" ></app-card-user>
+        </div>
       </div>
     </div>
   </div>

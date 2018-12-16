@@ -2,11 +2,35 @@
 nav {
     background-color: #1585de;
     margin-bottom: 20px;
+    top: 0;
+    position: sticky;
+    z-index: 1002;
 }
-.nav-wrapper a {
+.nav-wrapper {
+    display: flex;
+    padding: 0 30px;
+}
+.logo {
+    display: flex;
+    width: 50%;
+}
+.logo a {
     font-family: 'Monoton', cursive;
 }
-.nav-wrapper span {
+.logo span {
     font-family: 'Kaushan Script', cursive;
     color: black;
+}
+
+.usuario {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.divisor {
+    width: 1px;
+    background: #fff;
+    margin: 0 10px;
+    height: 32px;
 }

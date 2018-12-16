@@ -14,13 +14,22 @@ import { CommentsService } from '../core/comments.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlaceholderPostComponent } from './placeholder-post/placeholder-post.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationService } from '../core/authentication.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   declarations: [
     PostComponent,
@@ -30,12 +39,14 @@ import { PlaceholderPostComponent } from './placeholder-post/placeholder-post.co
     CardPostComponent,
     BoxPostComponent,
     CommentsComponent,
-    PlaceholderPostComponent
+    PlaceholderPostComponent,
+    LoginComponent,
   ],
   providers: [
     PostsService,
     UsersService,
-    CommentsService
+    CommentsService,
+    AuthenticationService
   ]
 })
 export class ComponentsModule { }

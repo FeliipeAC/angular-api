@@ -21,3 +21,11 @@ app-placeholder-post {
     color: black !important;
     font-size: 0.8rem;
 }
+.blue {
+    background-color: #1976D2;
+    color: #fff;
+}
+.white {
+    background-color: #fff;
+    color: #1976D2;
+}

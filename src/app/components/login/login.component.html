@@ -1,0 +1,26 @@
+<div class="login-container">
+  <div class="login-form z-depth-5">
+      <div class="logo">
+          Angular<span>Feed</span>
+        </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">person_outline</i>
+          <label class="active" for="username">Username</label>
+          <input value="" id="username" type="text" formControlName="username" class="validate" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">alternate_email</i>
+          <label class="active" for="email">Email</label>
+          <input value="" id="email" type="email" formControlName="email" class="validate" required>
+        </div>
+      </div>
+      <div class="row">
+        <button class="waves-effect light-blue darken-2 btn"><i class="material-icons right">input</i>Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>

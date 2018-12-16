@@ -24,7 +24,6 @@ export class CardUserComponent implements OnInit {
   @Input() footerState: boolean;
 
   constructor() { }
-    
   ngOnInit() {
   }
 

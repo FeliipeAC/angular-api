@@ -15,7 +15,7 @@
       <p><i class="material-icons left">public</i>{{ user.website }}</p>
     </div>
     <div class="box-user-footer center-align" *ngIf="footerState" >
-      <a href="user/{{user.id}}">Ver mais posts</a>
+      <a routerLink="/user/{{user.id}}">Ver mais posts</a>
     </div>
   </div>
 </div>
